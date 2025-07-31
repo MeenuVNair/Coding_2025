@@ -3,6 +3,10 @@ package com.meenu.coding.easy;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
 public class NumberOfStudentsUnableToEatLunch {
     int top = 0;
     int sandwichCount = 0;

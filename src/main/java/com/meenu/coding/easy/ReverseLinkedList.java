@@ -13,6 +13,10 @@ import com.meenu.coding.util.ListNode;
  * }
  */
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
 
 public class ReverseLinkedList {
     public ListNode reverseList(ListNode head) {

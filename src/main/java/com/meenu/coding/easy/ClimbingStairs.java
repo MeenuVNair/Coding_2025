@@ -1,5 +1,9 @@
 package com.meenu.coding.easy;
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
 public class ClimbingStairs {
     public int climbStairs(int n) {
         if(n <= 3) {

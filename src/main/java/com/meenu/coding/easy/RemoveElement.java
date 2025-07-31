@@ -3,6 +3,10 @@ package com.meenu.coding.easy;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
 public class RemoveElement {
     public int removeElement(int[] nums, int val) {
         List<Integer> copyList = new ArrayList<>();

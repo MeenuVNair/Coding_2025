@@ -1,5 +1,9 @@
 package com.meenu.coding.easy;
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
 public class ConcatenationOfArray {
     public int[] getConcatenation(int[] nums) {
         int length = nums.length;

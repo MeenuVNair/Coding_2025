@@ -2,6 +2,10 @@ package com.meenu.coding.easy;
 
 import java.util.TreeSet;
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
 public class RemoveDuplicatesFromSortedArray {
     public int removeDuplicates(int[] nums) {
         TreeSet<Integer> uniqueValues = new TreeSet<>();

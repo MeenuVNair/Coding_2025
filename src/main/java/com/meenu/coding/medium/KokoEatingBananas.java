@@ -2,6 +2,11 @@ package com.meenu.coding.medium;
 
 import java.util.Arrays;
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
+
 public class KokoEatingBananas {
     public int minEatingSpeed(int[] piles, int h) {
         int l = 1;

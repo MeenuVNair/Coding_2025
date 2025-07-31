@@ -1,5 +1,10 @@
 package com.meenu.coding.medium;
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
+
 public class SearchA2DMatrix {
     public boolean searchMatrix(int[][] matrix, int target) {
         int rows = matrix.length;

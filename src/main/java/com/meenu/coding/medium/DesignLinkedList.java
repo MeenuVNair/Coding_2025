@@ -1,5 +1,10 @@
 package com.meenu.coding.medium;
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
+
 public class DesignLinkedList {
     Node head = null;
     int size = 0;

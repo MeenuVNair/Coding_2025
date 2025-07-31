@@ -3,6 +3,10 @@ package com.meenu.coding.easy;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
 public class ImplementStackUsingQueues {
     Queue<Integer> myQueue;
     public ImplementStackUsingQueues() {

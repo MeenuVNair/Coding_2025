@@ -2,6 +2,11 @@ package com.meenu.coding.easy;
 
 import java.util.Stack;
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
+
 public class ValidParentheses {
     public boolean isValid(String s) {
         if(s.length() == 0) {

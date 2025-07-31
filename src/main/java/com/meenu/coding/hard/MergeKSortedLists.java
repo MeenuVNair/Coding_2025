@@ -16,6 +16,10 @@ import com.meenu.coding.util.ListNode;
 // Time complexity : O(N∗K)
 // Space complexity : O(1)
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
 public class MergeKSortedLists {
     public ListNode mergeKLists(ListNode[] lists) {
         if(lists.length == 0)

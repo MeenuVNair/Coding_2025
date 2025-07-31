@@ -32,6 +32,11 @@ class SortColors {
 // Time complexity : O(n)
 // Space complexity : O(1)
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
+
 class SortColors {
     public void sortColors(int[] nums) {
         int[] count = {0, 0, 0};

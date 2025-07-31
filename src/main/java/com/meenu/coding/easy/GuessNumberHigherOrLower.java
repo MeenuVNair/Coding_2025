@@ -10,6 +10,10 @@ package com.meenu.coding.easy;
  */
 
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
 public class GuessNumberHigherOrLower /*extends GuessGame */{
     public int guessNumber(int n) {
         int l = 1, r = n, mid;

@@ -13,6 +13,10 @@ import com.meenu.coding.util.ListNode;
  * }
  */
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
 public class MergeTwoSortedLists {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         if(list1 == null && list2 == null)

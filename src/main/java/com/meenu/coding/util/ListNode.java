@@ -1,5 +1,10 @@
 package com.meenu.coding.util;
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
+
 public class ListNode {
     public int val;
     public ListNode next;

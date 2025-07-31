@@ -1,5 +1,9 @@
 package com.meenu.coding.easy;
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
 public class BinarySearch {
     public int search(int[] nums, int target) {
         int l = 0, r = nums.length - 1, mid = 0;

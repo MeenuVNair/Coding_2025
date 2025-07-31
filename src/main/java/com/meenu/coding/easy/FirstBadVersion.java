@@ -3,6 +3,10 @@ package com.meenu.coding.easy;
 /* The isBadVersion API is defined in the parent class VersionControl.
       boolean isBadVersion(int version); */
 
+/**
+ * @author meenuvnair
+ * @created 31/07/25
+ */
 public class FirstBadVersion /*extends VersionControl*/ {
     public int firstBadVersion(int n) {
         int l = 1, r = n, mid, badVersion = -1;
