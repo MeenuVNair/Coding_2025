@@ -16,5 +16,20 @@ This repo is a collection of:
 
 ---
 
-## 📁 Folder Structure
+## 🧠 Why This Repo?
+
+- ✅ To track my consistent learning
+
+- 💬 To revise patterns and approaches
+
+- 📂 To organize interview prep code
+
+- 🌱 To share and help other learners
+
+
+---
+
+## ⭐ Support This Repo
+If this repo has helped you, please consider giving it a ⭐ on GitHub — it motivates me to keep going and helps others discover it!
+
 
