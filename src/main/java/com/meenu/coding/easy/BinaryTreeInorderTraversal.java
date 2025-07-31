@@ -35,7 +35,7 @@ public class BinaryTreeInorderTraversal {
 
 // ****** ITERATIVE *********** //
 
-class Solution {
+class BinaryTreeInorderTraversal {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
