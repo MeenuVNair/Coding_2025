@@ -6,7 +6,7 @@ import com.meenu.coding.util.TreeNode;
 import java.util.Arrays;
 
 /**
- * @author meenuvnair
+ * @author Meenu V. Nair
  * @created 31/07/25
  */
 public class ConstructBinaryTreeFromPreorderAndInorderTraversal {

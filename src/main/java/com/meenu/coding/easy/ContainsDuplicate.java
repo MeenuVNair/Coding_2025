@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author meenuvnair
+ * @author Meenu V. Nair
  * @created 31/07/25
  */
 public class ContainsDuplicate {

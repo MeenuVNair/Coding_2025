@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author meenuvnair
+ * @author Meenu V. Nair
  * @created 31/07/25
  */
 public class KthSmallestElementInABST {

@@ -3,7 +3,7 @@ package com.meenu.coding.medium;
 import java.util.Stack;
 
 /**
- * @author meenuvnair
+ * @author Meenu V. Nair
  * @created 31/07/25
  */
 

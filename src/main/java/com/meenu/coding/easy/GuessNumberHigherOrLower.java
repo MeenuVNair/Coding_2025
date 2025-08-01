@@ -11,7 +11,7 @@ package com.meenu.coding.easy;
 
 
 /**
- * @author meenuvnair
+ * @author Meenu V. Nair
  * @created 31/07/25
  */
 public class GuessNumberHigherOrLower /*extends GuessGame */{

@@ -4,7 +4,7 @@ package com.meenu.coding.easy;
 import java.util.PriorityQueue;
 
 /**
- * @author meenuvnair
+ * @author Meenu V. Nair
  * @created 31/07/25
  */
 public class LastStoneWeight {

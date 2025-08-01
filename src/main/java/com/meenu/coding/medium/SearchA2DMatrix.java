@@ -1,7 +1,7 @@
 package com.meenu.coding.medium;
 
 /**
- * @author meenuvnair
+ * @author Meenu V. Nair
  * @created 31/07/25
  */
 

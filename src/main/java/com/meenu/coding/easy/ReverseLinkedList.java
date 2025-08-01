@@ -14,7 +14,7 @@ import com.meenu.coding.util.ListNode;
  */
 
 /**
- * @author meenuvnair
+ * @author Meenu V. Nair
  * @created 31/07/25
  */
 

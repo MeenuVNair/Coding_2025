@@ -17,7 +17,7 @@ import com.meenu.coding.util.ListNode;
 // Space complexity : O(1)
 
 /**
- * @author meenuvnair
+ * @author Meenu V. Nair
  * @created 31/07/25
  */
 public class MergeKSortedLists {

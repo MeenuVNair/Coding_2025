@@ -3,7 +3,7 @@ package com.meenu.coding.easy;
 import java.util.TreeSet;
 
 /**
- * @author meenuvnair
+ * @author Meenu V. Nair
  * @created 31/07/25
  */
 public class RemoveDuplicatesFromSortedArray {
