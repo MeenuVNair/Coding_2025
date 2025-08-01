@@ -9,6 +9,11 @@ import java.util.Map;
  * @created 31/07/25
  */
 
+/**
+ Time Complexity:O(n) because the code iterates through the input array `nums` once in the worst-case scenario.
+ Space Complexity:O(n) because, in the worst-case scenario, the HashMap `map` could store all the elements of the input array `nums`.
+ */
+
 // ******** BRUTE FORCE ************* //
 /*public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
