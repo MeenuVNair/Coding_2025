@@ -11,8 +11,8 @@ package com.meenu.coding.easy;
  */
 
 /**** COMPLEXITY ANALYSIS ******************** 
- Time complexity: O(n)
- Space complexity:O(26) → O(1)
+ Time complexity: O(n) because the code iterates through the strings 's' and 't' once, each of length 'n', and then iterates through the 'count' array of fixed size 26.
+ Space complexity:O(26) → O(1) because the code uses a fixed-size integer array of length 26, irrespective of the input string size.
  */
 
 /*public class ValidAnagram {
