@@ -32,7 +32,10 @@ This repo is a collection of:
 ## ⭐ Support This Repo
 If this repo has helped you, please consider giving it a ⭐ on GitHub — it motivates me to keep going and helps others discover it!
 
-# 📊 GitHub Commit Activity
+---
+
+
+## 📊 GitHub Commit Activity
 
 ## **Full Year (2025)**
 ![Meenu's GitHub activity graph - 2025](https://github-readme-activity-graph.vercel.app/graph?username=MeenuVNair&theme=github&from=2025-01-01&to=2025-12-31)
@@ -46,11 +49,6 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 ### August
 ![August 2025](https://github-readme-activity-graph.vercel.app/graph?username=MeenuVNair&theme=github&from=2025-08-01&to=2025-08-31)
 
-### September
-![September 2025](https://github-readme-activity-graph.vercel.app/graph?username=MeenuVNair&theme=github&from=2025-09-01&to=2025-09-30)
-
-### October
-![October 2025](https://github-readme-activity-graph.vercel.app/graph?username=MeenuVNair&theme=github&from=2025-10-01&to=2025-10-31)
 
 
 
