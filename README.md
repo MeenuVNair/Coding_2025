@@ -8,11 +8,14 @@ Welcome to my all-in-one coding practice repository! This is where I organize my
 
 This repo is a collection of:
 
-- ✅ **LeetCode & NeetCode Solutions**
-- 📚 **Topic-wise DSA Practice** (Arrays, Trees, DP, Graphs, etc.)
-- 💡 **Frequently Asked Interview Questions**
-- 🧪 **Handy Utility Programs / Snippets**
-- 📘 **Notes and Patterns** (Sliding Window, Binary Search, Recursion, etc.)
+- ✅ **LeetCode Solutions**
+- ✅ **NeetCode Solutions**
+- ✅ **Strivers DSA Sheets**
+- ✅ **Topic-wise DSA Practice** (Arrays, Trees, DP, Graphs, etc.)
+- ✅ **Low Level Design**
+- ✅ **Frequently Asked Interview Questions**
+- ✅ **Handy Utility Programs / Snippets**
+- ✅ **Notes and Patterns** (Sliding Window, Binary Search, Recursion, etc.)
 
 ---
 
