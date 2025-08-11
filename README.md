@@ -32,4 +32,6 @@ This repo is a collection of:
 ## ⭐ Support This Repo
 If this repo has helped you, please consider giving it a ⭐ on GitHub — it motivates me to keep going and helps others discover it!
 
+![Meenu's GitHub activity graph](https://github-readme-activity-graph.vercel.app/graph?username=MeenuVNair&theme=github)
+
 
