@@ -37,6 +37,17 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 
 ---
 
+## 📂 **Program Counts**
+
+| **Difficulty** | **Count**   |
+|----------------|-------------|
+| 🟢 **Easy**    | **63**      |
+| 🟡 **Medium**  | **50**      |
+| 🔴 **Hard**    | **2**       |
+
+
+---
+
 
 ## 📊 GitHub Commit Activity
 
@@ -56,3 +67,15 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 
 
 
+
+
+<!-- PROGRAM_COUNTS_START -->
+## 📊 **Program Counts**
+---
+| Difficulty | Count |
+|:----------:|:-----:|
+| 🟩 **Easy**   | **63** ✅ |
+| 🟨 **Medium** | **50** ⚡ |
+| 🟥 **Hard**   | **2** 💪 |
+
+<!-- PROGRAM_COUNTS_END -->
