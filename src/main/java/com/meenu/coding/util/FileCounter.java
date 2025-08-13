@@ -3,8 +3,8 @@ package com.meenu.coding.util;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.stream.Stream;
+import java.util.regex.Pattern;
 
 /**
  * @author Meenu V. Nair
@@ -21,44 +21,48 @@ import java.util.Map;
 
 public class FileCounter {
     public static void main(String[] args) throws IOException {
-        // Folder paths
-        Map<String, Path> folders = new HashMap<>();
-        folders.put("Easy", Paths.get("src/main/java/com/meenu/coding/easy"));
-        folders.put("Medium", Paths.get("src/main/java/com/meenu/coding/medium"));
-        folders.put("Hard", Paths.get("src/main/java/com/meenu/coding/hard"));
+        // Your repo layout
+        Path easyDir   = Paths.get("src/main/java/com/meenu/coding/easy");
+        Path mediumDir = Paths.get("src/main/java/com/meenu/coding/medium");
+        Path hardDir   = Paths.get("src/main/java/com/meenu/coding/hard");
 
-        // Count files
-        Map<String, Long> counts = new HashMap<>();
-        for (Map.Entry<String, Path> entry : folders.entrySet()) {
-            long count = Files.list(entry.getValue())
-                    .filter(Files::isRegularFile)
-                    .count();
-            counts.put(entry.getKey(), count);
+        int easyCount   = countJavaFiles(easyDir);
+        int mediumCount = countJavaFiles(mediumDir);
+        int hardCount   = countJavaFiles(hardDir);
+
+        Path readmePath = Paths.get("README.md");
+        String content  = new String(Files.readAllBytes(readmePath), StandardCharsets.UTF_8);
+
+        // Bold, emoji-highlighted Markdown table
+        String newTable =
+                "## 📂 **Program Counts**\n\n" +
+                        "| **Difficulty** | **Count** |\n" +
+                        "|------------|-------|\n" +
+                        "| 🟢 **Easy**    | **" + easyCount + "**    |\n" +
+                        "| 🟡 **Medium**  | **" + mediumCount + "**    |\n" +
+                        "| 🔴 **Hard**    | **" + hardCount + "**    |\n";
+
+
+        String startMarker = "<!-- PROGRAM_COUNTS_START -->";
+        String endMarker   = "<!-- PROGRAM_COUNTS_END -->";
+
+        if (content.contains(startMarker) && content.contains(endMarker)) {
+            String regex = "(?s)" + Pattern.quote(startMarker) + ".*?" + Pattern.quote(endMarker);
+            String replacement = startMarker + "\n" + newTable + "\n" + endMarker;
+            content = content.replaceAll(regex, replacement);
+        } else {
+            content += "\n\n" + startMarker + "\n" + newTable + "\n" + endMarker + "\n";
         }
 
-        // Read README.md
-        Path readmePath = Paths.get("README.md");
-        String content = new String(Files.readAllBytes(readmePath), StandardCharsets.UTF_8);
-
-        // Build new table (Java 8 string concatenation)
-        String table =
-                "## 📂 Program Counts\n\n" +
-                        "| Difficulty | Count |\n" +
-                        "|------------|-------|\n" +
-                        "| 🟢 Easy    | " + counts.get("Easy") + "    |\n" +
-                        "| 🟡 Medium  | " + counts.get("Medium") + "    |\n" +
-                        "| 🔴 Hard    | " + counts.get("Hard") + "    |\n";
-
-        // Replace the old table with the new one
-        content = content.replaceAll(
-                "(?s)## 📂 Program Counts.*?(?=##|$)", // Matches old table block
-                table + "\n"
-        );
-
-        // Write updated README
         Files.write(readmePath, content.getBytes(StandardCharsets.UTF_8));
+        System.out.println("✅ README.md updated.");
+    }
 
-        System.out.println("Updated counts in README: " + counts);
+    private static int countJavaFiles(Path dir) throws IOException {
+        if (!Files.exists(dir)) return 0;
+        try (Stream<Path> paths = Files.walk(dir)) {
+            return (int) paths.filter(p -> Files.isRegularFile(p) && p.toString().endsWith(".java")).count();
+        }
     }
 }
 
