@@ -42,8 +42,8 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 | **Difficulty** | **Count** |
 |------------|-------|
 | 🟢 **Easy**    | **63**    |
-| 🟡 **Medium**  | **53**    |
-| 🔴 **Hard**    | **2**    |
+| 🟡 **Medium**  | **52**    |
+| 🔴 **Hard**    | **3**    |
 
 <!-- PROGRAM_COUNTS_END -->
 
