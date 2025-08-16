@@ -44,10 +44,7 @@ public class LargestSubarrayWithSum0 {
 /*******  PROBLEM DESCRIPTION ******************** 
  You are given an integer array arr of size n which contains both positive and negative integers. Your task is to find the length of the longest contiguous subarray with sum equal to 0.
 
-
-
  Return the length of such a subarray. If no such subarray exists, return 0.
-
 
  Examples:
  Input: arr = [15, -2, 2, -8, 1, 7, 10, 23]
