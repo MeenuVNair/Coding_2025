@@ -14,7 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**** COMPLEXITY ANALYSIS ********************
-
+ Time complexity: O(1) for each sumRange() query, O(n) for building the prefix sum array.
+ Space complexity: O(n)
  */
 
 public class RangeSumQuery_Immutable {
