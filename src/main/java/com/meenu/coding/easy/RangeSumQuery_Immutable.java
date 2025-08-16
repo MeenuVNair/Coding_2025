@@ -1,5 +1,7 @@
 package com.meenu.coding.easy;
 
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Meenu V. Nair
@@ -7,11 +9,9 @@ package com.meenu.coding.easy;
  */
 
 /*******  APPROACH ******************** 
-
+ Prefix Sum
  */
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**** COMPLEXITY ANALYSIS ********************
  Time complexity: O(1) for each sumRange() query, O(n) for building the prefix sum array.

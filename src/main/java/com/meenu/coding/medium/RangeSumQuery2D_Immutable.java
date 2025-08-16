@@ -7,7 +7,7 @@ package com.meenu.coding.medium;
  */
 
 /*******  APPROACH ******************** 
-
+ Prefix Sum
  */
 
 /**** COMPLEXITY ANALYSIS ******************** 
