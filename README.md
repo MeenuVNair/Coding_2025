@@ -41,7 +41,7 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 
 | **Difficulty** | **Count** |
 |------------|-------|
-| 🟢 **Easy**    | **64**    |
+| 🟢 **Easy**    | **65**    |
 | 🟡 **Medium**  | **53**    |
 | 🔴 **Hard**    | **3**    |
 
