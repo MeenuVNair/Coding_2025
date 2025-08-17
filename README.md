@@ -44,6 +44,7 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 | 🟢 **Easy**    | **67**    |
 | 🟡 **Medium**  | **60**    |
 | 🔴 **Hard**    | **3**    |
+| 📊 **ToTal**    | **130**    |
 
 <!-- PROGRAM_COUNTS_END -->
 

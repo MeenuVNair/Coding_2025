@@ -40,7 +40,8 @@ public class FileCounter {
                         "|------------|-------|\n" +
                         "| 🟢 **Easy**    | **" + easyCount + "**    |\n" +
                         "| 🟡 **Medium**  | **" + mediumCount + "**    |\n" +
-                        "| 🔴 **Hard**    | **" + hardCount + "**    |\n";
+                        "| 🔴 **Hard**    | **" + hardCount + "**    |\n" +
+                        "| \uD83D\uDCCA **ToTal**    | **" + (easyCount + mediumCount + hardCount) + "**    |\n";
 
 
         String startMarker = "<!-- PROGRAM_COUNTS_START -->";
