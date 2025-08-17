@@ -18,6 +18,12 @@ import com.meenu.coding.util.ListNode;
  * @created 31/07/25
  */
 
+/** COMPLEXITY ANALYSIS
+
+ Time Complexity:O(n), where n is the number of nodes in the linked list, due to iterating through the list once.
+ Space Complexity:O(1), as the algorithm uses a constant amount of extra space regardless of the input size. Only a few pointers are used.
+ */
+
 public class ReverseLinkedList {
     public ListNode reverseList(ListNode head) {
         ListNode node = null;
