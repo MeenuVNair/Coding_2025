@@ -14,7 +14,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**** COMPLEXITY ANALYSIS ********************
-
+ Time Complexity:Insert, search and startsWith have O(m) time complexity, where m is the key length.
+ Space Complexity:O(N*L) where N is the number of words and L is the average length of the words
  */
 
 public class ImplementTrie_Prefix_Tree {
