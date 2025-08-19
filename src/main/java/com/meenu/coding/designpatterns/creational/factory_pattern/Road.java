@@ -1,4 +1,4 @@
-package com.meenu.coding.designpatterns.creational.factory;
+package com.meenu.coding.designpatterns.creational.factory_pattern;
 
 
 /**

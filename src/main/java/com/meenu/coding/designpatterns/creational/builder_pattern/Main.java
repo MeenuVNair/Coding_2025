@@ -1,4 +1,4 @@
-package com.meenu.coding.designpatterns.creational.builder;
+package com.meenu.coding.designpatterns.creational.builder_pattern;
 
 import java.util.Arrays;
 
