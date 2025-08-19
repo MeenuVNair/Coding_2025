@@ -54,7 +54,7 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 
 | **Topics** | **Count** |
 |----------------|-----------|
-| ✅ **Design Patterns**    | **11** |
+| ✅ **Design Patterns**    | **16** |
 
 <!-- LLD_END -->
 
