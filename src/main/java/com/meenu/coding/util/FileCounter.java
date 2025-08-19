@@ -88,10 +88,11 @@ public class FileCounter {
      * and builds a Markdown table with Easy/Medium/Hard breakdown.
      */
     private static String buildCommitHistoryTable() throws IOException, InterruptedException {
-        // Run git log: output week + commit message
+        // Run git log: output week + changed files
         ProcessBuilder pb = new ProcessBuilder(
                 "git", "log", "--since=1.month",
-                "--date=format:%Y-%V", "--pretty=format:%ad|%s"
+                "--date=format:%Y-%V",
+                "--pretty=format:%ad", "--name-only"
         );
         pb.redirectErrorStream(true);
         Process process = pb.start();
@@ -101,20 +102,27 @@ public class FileCounter {
         class Stats { int easy, medium, hard; }
         Map<String, Stats> weekStats = new LinkedHashMap<>();
 
+        String currentWeek = null;
         while (sc.hasNextLine()) {
             String line = sc.nextLine().trim();
-            if (line.isEmpty() || !line.contains("|")) continue;
 
-            String[] parts = line.split("\\|", 2);
-            String isoWeek = parts[0];
-            String msg  = parts[1].toLowerCase();
+            if (line.isEmpty()) continue;
 
-            String weekLabel = convertIsoWeekToRange(isoWeek);
+            // Detect week (line with date)
+            if (line.matches("\\d{4}-\\d{2}")) {
+                currentWeek = convertIsoWeekToRange(line);
+                weekStats.putIfAbsent(currentWeek, new Stats());
+                continue;
+            }
 
-            Stats stats = weekStats.computeIfAbsent(weekLabel, k -> new Stats());
-            if (msg.contains("easy")) stats.easy++;
-            else if (msg.contains("medium")) stats.medium++;
-            else if (msg.contains("hard")) stats.hard++;
+            // Otherwise it's a file path
+            if (currentWeek != null) {
+                Stats stats = weekStats.get(currentWeek);
+                String lower = line.toLowerCase();
+                if (lower.contains("/easy/")) stats.easy++;
+                else if (lower.contains("/medium/")) stats.medium++;
+                else if (lower.contains("/hard/")) stats.hard++;
+            }
         }
         process.waitFor();
 
