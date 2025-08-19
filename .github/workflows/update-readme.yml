@@ -10,10 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write      # needed to push README changes
+    env:
+      TZ: Asia/Kolkata   # <- optional: matches your local timezone
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repo (full history)
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # <<< IMPORTANT
+          persist-credentials: false
+
+      - name: "Debug: show last month git log (optional)"
+        run: |
+          git log --since=1.month --date=format:%Y-%V --pretty=format:'%ad|%s' --name-only | head -n 200
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -35,5 +44,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "chore: auto-update README with program counts and commit history" || echo "No changes to commit"
+          git commit -m "chore: auto-update README with program counts & weekly activity" || echo "No changes to commit"
           git push
