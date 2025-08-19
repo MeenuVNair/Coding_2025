@@ -13,7 +13,11 @@ package com.meenu.coding.hard;
 import java.util.*;
 
 /**** COMPLEXITY ANALYSIS ********************
+ Time complexity: O(m∗n∗4∗3t−1+s)
+ Space complexity: O(s)
 
+ Where m is the number of rows, n is the number of columns,
+ t is the maximum length of any word in the array words and s is the sum of the lengths of all the words.
  */
 
 public class WordSearch_II {
