@@ -22,10 +22,17 @@ public class FileCounter {
         Path easyDir   = Paths.get("src/main/java/com/meenu/coding/easy");
         Path mediumDir = Paths.get("src/main/java/com/meenu/coding/medium");
         Path hardDir   = Paths.get("src/main/java/com/meenu/coding/hard");
+        Path lldCreationalDir   = Paths.get("src/main/java/com/meenu/coding/designpatterns/creational");
+        Path lldStructuralDir   = Paths.get("src/main/java/com/meenu/coding/designpatterns/structural");
+        Path lldCBehavioralDir   = Paths.get("src/main/java/com/meenu/coding/designpatterns/behavioral");
 
         int easyCount   = countJavaFiles(easyDir);
         int mediumCount = countJavaFiles(mediumDir);
         int hardCount   = countJavaFiles(hardDir);
+
+        int lldCreationalCount   = countJavaFiles(lldCreationalDir);
+        int lldStructuralCount   = countJavaFiles(lldStructuralDir);
+        int lldCBehavioralCount   = countJavaFiles(lldCBehavioralDir);
 
         Path readmePath = Paths.get("README.md");
         String content  = new String(Files.readAllBytes(readmePath), StandardCharsets.UTF_8);
@@ -34,13 +41,14 @@ public class FileCounter {
         // Program Counts Table
         // ==============================
         String newProgramTable =
-                "## 📂 **Program Counts**\n\n" +
+                "## 📂 **DSA Program Counts**\n\n" +
                         "| **Difficulty** | **Count** |\n" +
                         "|----------------|-----------|\n" +
                         "| 🟢 **Easy**    | **" + easyCount + "** |\n" +
                         "| 🟡 **Medium**  | **" + mediumCount + "** |\n" +
                         "| 🔴 **Hard**    | **" + hardCount + "** |\n" +
                         "| 📊 **Total**   | **" + (easyCount + mediumCount + hardCount) + "** |\n";
+
 
         String startMarker = "<!-- PROGRAM_COUNTS_START -->";
         String endMarker   = "<!-- PROGRAM_COUNTS_END -->";
@@ -51,6 +59,27 @@ public class FileCounter {
             content = content.replaceAll(regex, replacement);
         } else {
             content += "\n\n" + startMarker + "\n" + newProgramTable + "\n" + endMarker + "\n";
+        }
+
+        // ==============================
+        // LLD Topics
+        // ==============================
+
+        String lldStart = "<!-- LLD_START -->";
+        String lldEnd   = "<!-- LLD_END -->";
+
+        String newLLDTable =
+                "## 📂 **Low Level Design**\n\n" +
+                        "| **Topics** | **Count** |\n" +
+                        "|----------------|-----------|\n" +
+                        "| ✅ **Design Patterns**    | **" + (lldCreationalCount + lldStructuralCount + lldCBehavioralCount) + "** |\n";
+
+        if (content.contains(lldStart) && content.contains(lldEnd)) {
+            String regex = "(?s)" + Pattern.quote(lldStart) + ".*?" + Pattern.quote(lldEnd);
+            String replacement = lldStart + "\n" + newLLDTable + "\n" + lldEnd;
+            content = content.replaceAll(regex, replacement);
+        } else {
+            content += "\n\n" + lldStart + "\n" + newLLDTable + "\n" + lldEnd + "\n";
         }
 
         // ==============================
@@ -128,7 +157,7 @@ public class FileCounter {
 
         // Build Markdown table
         StringBuilder sb = new StringBuilder();
-        sb.append("## 📊 Commit Activity (last 4 weeks)\n\n");
+        sb.append("## 📊 DSA Commit Activity (last 4 weeks)\n\n");
         sb.append("| Week | 🟢 Easy | 🟡 Medium | 🔴 Hard | 📈 Total |\n");
         sb.append("|------|---------|-----------|---------|----------|\n");
 

@@ -37,7 +37,7 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 
 ---
 <!-- PROGRAM_COUNTS_START -->
-## 📂 **Program Counts**
+## 📂 **DSA Program Counts**
 
 | **Difficulty** | **Count** |
 |----------------|-----------|
@@ -49,9 +49,19 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 <!-- PROGRAM_COUNTS_END -->
 
 ---
+<!-- LLD_START -->
+## 📂 **Low Level Design**
+
+| **Topics** | **Count** |
+|----------------|-----------|
+| ✅ **Design Patterns**    | **4** |
+
+<!-- LLD_END -->
+
+---
 
 <!-- COMMIT_HISTORY_START -->
-## 📊 Commit Activity (last 4 weeks)
+## 📊 DSA Commit Activity (last 4 weeks)
 
 | Week | 🟢 Easy | 🟡 Medium | 🔴 Hard | 📈 Total |
 |------|---------|-----------|---------|----------|
