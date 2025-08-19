@@ -52,9 +52,9 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 <!-- LLD_START -->
 ## 📂 **Low Level Design**
 
-| **Topics** | **Count** |
-|----------------|-----------|
-| ✅ **Design Patterns**    | **16** |
+| **Topics** | **Count** | **Details** |
+|----------------|-----------|-----------|
+| ✅ **Design Patterns**    | **16** |creational : 16, structural : 0, behavioral : 0|
 
 <!-- LLD_END -->
 

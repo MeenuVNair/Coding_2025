@@ -70,9 +70,10 @@ public class FileCounter {
 
         String newLLDTable =
                 "## 📂 **Low Level Design**\n\n" +
-                        "| **Topics** | **Count** |\n" +
-                        "|----------------|-----------|\n" +
-                        "| ✅ **Design Patterns**    | **" + (lldCreationalCount + lldStructuralCount + lldCBehavioralCount) + "** |\n";
+                        "| **Topics** | **Count** | **Details** |\n" +
+                        "|----------------|-----------|-----------|\n" +
+                        "| ✅ **Design Patterns**    | **" + (lldCreationalCount + lldStructuralCount + lldCBehavioralCount) + "** |" + "creational : " + lldCreationalCount + ", structural : " + lldStructuralCount + ", behavioral : " + lldCBehavioralCount + "|\n";
+
 
         if (content.contains(lldStart) && content.contains(lldEnd)) {
             String regex = "(?s)" + Pattern.quote(lldStart) + ".*?" + Pattern.quote(lldEnd);
