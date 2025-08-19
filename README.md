@@ -55,7 +55,7 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 
 | Week | 🟢 Easy | 🟡 Medium | 🔴 Hard | 📈 Total |
 |------|---------|-----------|---------|----------|
-| Aug 18–24 | 0 | 0 | 0 | 0 |
+| Aug 18–24 | 69 | 63 | 7 | 139 |
 
 <!-- COMMIT_HISTORY_END -->
 
