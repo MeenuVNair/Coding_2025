@@ -1,4 +1,4 @@
-package com.meenu.coding.designpatterns.creational;
+package com.meenu.coding.designpatterns.creational.singleton;
 
 
 /**
