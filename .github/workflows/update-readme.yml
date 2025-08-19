@@ -20,10 +20,6 @@ jobs:
           fetch-depth: 0        # <<< IMPORTANT
           persist-credentials: false
 
-      - name: "Debug: show last month git log (optional)"
-        run: |
-          git log --since=1.month --date=format:%Y-%V --pretty=format:'%ad|%s' --name-only | head -n 200
-
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
