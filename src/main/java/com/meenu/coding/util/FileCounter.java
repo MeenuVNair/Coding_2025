@@ -30,9 +30,9 @@ public class FileCounter {
         int mediumCount = countJavaFiles(mediumDir);
         int hardCount   = countJavaFiles(hardDir);
 
-        int lldCreationalCount   = countJavaFiles(lldCreationalDir);
-        int lldStructuralCount   = countJavaFiles(lldStructuralDir);
-        int lldCBehavioralCount   = countJavaFiles(lldCBehavioralDir);
+        int lldCreationalCount   = countSubdirectories(lldCreationalDir);
+        int lldStructuralCount   = countSubdirectories(lldStructuralDir);
+        int lldCBehavioralCount   = countSubdirectories(lldCBehavioralDir);
 
         Path readmePath = Paths.get("README.md");
         String content  = new String(Files.readAllBytes(readmePath), StandardCharsets.UTF_8);
@@ -110,6 +110,13 @@ public class FileCounter {
         if (!Files.exists(dir)) return 0;
         try (Stream<Path> paths = Files.walk(dir)) {
             return (int) paths.filter(p -> Files.isRegularFile(p) && p.toString().endsWith(".java")).count();
+        }
+    }
+
+    private static int countSubdirectories(Path dir) throws IOException {
+        if (!Files.exists(dir)) return 0;
+        try (Stream<Path> paths = Files.list(dir)) { // only direct children
+            return (int) paths.filter(Files::isDirectory).count();
         }
     }
 
