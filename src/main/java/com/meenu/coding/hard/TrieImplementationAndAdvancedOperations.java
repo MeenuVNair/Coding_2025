@@ -7,6 +7,71 @@ package com.meenu.coding.hard;
  */
 
 /*******  APPROACH ******************** 
+ When we insert a word, at each node:
+    countPrefix → incremented (means this prefix is part of another word).
+    At the last character → countWord++.
+ So after inserting multiple words, these counts tell us:
+    How many words end here (countWord).
+    How many words pass through this node (countPrefix).
+
+ When we erase a word, we want to reverse what we did during insertion.
+ 1. Check if the word exists
+        If word isn’t there, nothing to erase.
+ 2. Walk through each character
+    Decrement the prefixCount, because one occurrence of this prefix is disappearing
+ 3. Remove unused branches, If no word uses this prefix anymore, we can safely delete the node (garbage cleanup).
+ 4. Decrement the ending word count, because one word that ended here has been removed.
+
+ Example : Suppose we insert:
+
+ insert("apple")
+ insert("apple")
+ insert("app")
+
+ Now counters look like:
+ a (prefix=3)
+ p (prefix=3)
+ p (prefix=3, word=1)   <- "app"
+ l (prefix=2)
+ e (prefix=2, word=2) <- "apple"
+
+ Case 1: erase("apple")
+
+ Traverse a → p → p → l → e
+ Decrement prefix counts along the way
+ At e, do countWord-- (2 → 1)
+ Still prefix > 0, so branch stays
+
+ Now structure is:
+
+ a (3→2)
+ p (3→2)
+ p (3→2, word=1)
+ l (2→1)
+ e (2→1, word=1)
+
+ Case 2: erase("apple") again
+
+ Traverse again, decrement counts
+ At e, do countWord-- (1 → 0)
+ Now l → e still exist because "app" needs them
+
+ Structure:
+
+ a (2→1)
+ p (2→1)
+ p (2→1, word=1)
+ l (1→0)
+ e (1→0, word=0)
+
+ Case 3: erase("app")
+
+ Traverse a → p → p
+ Decrement prefix counts
+ At p, do countWord-- (1 → 0)
+
+ Now "app" is gone, "apple" is gone → Trie is empty, nodes can be pruned.
+
 
  */
 
@@ -14,7 +79,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**** COMPLEXITY ANALYSIS ********************
-
+ Time Complexity:O(m) for insert, countWordsEqualTo, countWordsStartingWith, and erase, where m is the length of the input string.
+ Space Complexity:O(m*k) where m is the number of inserted words and k is the average length of the words, due to storing the trie nodes.
  */
 
 public class TrieImplementationAndAdvancedOperations {
