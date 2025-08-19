@@ -40,16 +40,29 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 ## 📂 **Program Counts**
 
 | **Difficulty** | **Count** |
-|------------|-------|
-| 🟢 **Easy**    | **69**    |
-| 🟡 **Medium**  | **63**    |
-| 🔴 **Hard**    | **7**    |
-| 📊 **ToTal**    | **139**    |
+|----------------|-----------|
+| 🟢 **Easy**    | **69** |
+| 🟡 **Medium**  | **63** |
+| 🔴 **Hard**    | **7** |
+| 📊 **Total**   | **139** |
 
 <!-- PROGRAM_COUNTS_END -->
 
 ---
 
+<!-- COMMIT_HISTORY_START -->
+## 📊 Commit Activity (last 4 weeks)
+
+| Week | 🟢 Easy | 🟡 Medium | 🔴 Hard | 📈 Total |
+|------|---------|-----------|---------|----------|
+| Aug 18–24 | 0 | 0 | 0 | 0 |
+| Aug 11–17 | 0 | 0 | 0 | 0 |
+| Aug 4–10 | 0 | 0 | 0 | 0 |
+| Jul 28–3 | 0 | 0 | 0 | 0 |
+
+<!-- COMMIT_HISTORY_END -->
+
+---
 
 ## 📊 GitHub Commit Activity
 
@@ -64,3 +77,4 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 
 ### August
 ![August 2025](https://github-readme-activity-graph.vercel.app/graph?username=MeenuVNair&theme=github&from=2025-08-01&to=2025-08-31)
+
