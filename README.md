@@ -83,7 +83,7 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 
 ## **Monthly Breakdown (2025)**
 ### July
-![July 2025](https://github-readme-activity-graph.vercel.app/graph?username=MeenuVNair&theme=github&from=2025-07-01&to=2025-07-31)
+![July 2025](https://github-readme-activity-graph.vercel.app/graph?username=MeenuVNair&theme=github&from=2025-07-01&to=2025-07-31&custom_title=July%202025%20Contributions)
 
 ### August
 ![August 2025](https://github-readme-activity-graph.vercel.app/graph?username=MeenuVNair&theme=github&from=2025-08-01&to=2025-08-31&custom_title=August%202025%20Contributions)
