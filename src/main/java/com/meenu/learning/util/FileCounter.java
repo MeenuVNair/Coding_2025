@@ -33,9 +33,9 @@ public class FileCounter {
 
         int creationalDPCount   = countSubdirectories(creationalDesignPatternDir);
         int structuralDPCount   = countSubdirectories(structuralDesignPatternDir);
-        int behavioralDPCount   = countSubdirectories(LLDDir);
+        int behavioralDPCount   = countSubdirectories(behavioralDesignPatternDir);
 
-        int lldCount   = countSubdirectories(behavioralDesignPatternDir);
+        int lldCount   = countSubdirectories(LLDDir);
 
         Path readmePath = Paths.get("README.md");
         String content  = new String(Files.readAllBytes(readmePath), StandardCharsets.UTF_8);
