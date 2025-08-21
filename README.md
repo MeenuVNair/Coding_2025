@@ -41,10 +41,10 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 
 | **Difficulty** | **Count** |
 |----------------|-----------|
-| 🟢 **Easy**    | **69** |
+| 🟢 **Easy**    | **70** |
 | 🟡 **Medium**  | **67** |
 | 🔴 **Hard**    | **10** |
-| 📊 **Total**   | **146** |
+| 📊 **Total**   | **147** |
 
 <!-- PROGRAM_COUNTS_END -->
 
@@ -65,7 +65,7 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 
 | Week | 🟢 Easy | 🟡 Medium | 🔴 Hard | 📈 Total |
 |------|---------|-----------|---------|----------|
-| Aug 18–24 | 0 | 7 | 10 | 17 |
+| Aug 18–24 | 1 | 7 | 10 | 18 |
 | Aug 11–17 | 29 | 24 | 1 | 54 |
 | Aug 4–10 | 24 | 19 | 1 | 44 |
 | Jul 28–3 | 56 | 41 | 3 | 100 |
