@@ -19,9 +19,9 @@ import java.time.format.DateTimeFormatter;
 public class FileCounter {
     public static void main(String[] args) throws IOException, InterruptedException {
         // Your repo layout
-        Path easyDir   = Paths.get("src/main/java/com/meenu/coding/easy");
-        Path mediumDir = Paths.get("src/main/java/com/meenu/coding/medium");
-        Path hardDir   = Paths.get("src/main/java/com/meenu/coding/hard");
+        Path easyDir   = Paths.get("src/main/java/com/meenu/coding/problems/easy");
+        Path mediumDir = Paths.get("src/main/java/com/meenu/coding/problems/medium");
+        Path hardDir   = Paths.get("src/main/java/com/meenu/coding/problems/hard");
         Path lldCreationalDir   = Paths.get("src/main/java/com/meenu/coding/designpatterns/creational");
         Path lldStructuralDir   = Paths.get("src/main/java/com/meenu/coding/designpatterns/structural");
         Path lldCBehavioralDir   = Paths.get("src/main/java/com/meenu/coding/designpatterns/behavioral");
