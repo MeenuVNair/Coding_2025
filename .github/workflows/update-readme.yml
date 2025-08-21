@@ -37,7 +37,7 @@ jobs:
           javac -d out @sources.txt
 
       - name: Run FileCounter (Program Counts + Commit History)
-        run: java -cp out com.meenu.coding.util.FileCounter
+        run: java -cp out com.meenu.learning.util.FileCounter
 
       - name: Commit changes
         run: |
