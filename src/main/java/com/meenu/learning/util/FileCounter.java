@@ -90,7 +90,7 @@ public class FileCounter {
         // ==============================
         // Commit History Table (last 4 weeks)
         // ==============================
-        String commitHistoryTable = buildCommitHistoryTable();
+       /* String commitHistoryTable = buildCommitHistoryTable();
 
         String commitStart = "<!-- COMMIT_HISTORY_START -->";
         String commitEnd   = "<!-- COMMIT_HISTORY_END -->";
@@ -101,7 +101,7 @@ public class FileCounter {
             content = content.replaceAll(regex, replacement);
         } else {
             content += "\n\n" + commitStart + "\n" + commitHistoryTable + "\n" + commitEnd + "\n";
-        }
+        }*/
 
         // ==============================
         // Write back
