@@ -22,17 +22,20 @@ public class FileCounter {
         Path easyDir   = Paths.get("src/main/java/com/meenu/learning/problems/easy");
         Path mediumDir = Paths.get("src/main/java/com/meenu/learning/problems/medium");
         Path hardDir   = Paths.get("src/main/java/com/meenu/learning/problems/hard");
-        Path lldCreationalDir   = Paths.get("src/main/java/com/meenu/learning/designpatterns/creational");
-        Path lldStructuralDir   = Paths.get("src/main/java/com/meenu/learning/designpatterns/structural");
-        Path lldCBehavioralDir   = Paths.get("src/main/java/com/meenu/learning/designpatterns/behavioral");
+        Path creationalDesignPatternDir   = Paths.get("src/main/java/com/meenu/learning/designpatterns/creational");
+        Path structuralDesignPatternDir   = Paths.get("src/main/java/com/meenu/learning/designpatterns/structural");
+        Path behavioralDesignPatternDir   = Paths.get("src/main/java/com/meenu/learning/designpatterns/behavioral");
+        Path LLDDir   = Paths.get("src/main/java/com/meenu/learning/lld");
 
         int easyCount   = countJavaFiles(easyDir);
         int mediumCount = countJavaFiles(mediumDir);
         int hardCount   = countJavaFiles(hardDir);
 
-        int lldCreationalCount   = countSubdirectories(lldCreationalDir);
-        int lldStructuralCount   = countSubdirectories(lldStructuralDir);
-        int lldCBehavioralCount   = countSubdirectories(lldCBehavioralDir);
+        int creationalDPCount   = countSubdirectories(creationalDesignPatternDir);
+        int structuralDPCount   = countSubdirectories(structuralDesignPatternDir);
+        int behavioralDPCount   = countSubdirectories(LLDDir);
+
+        int lldCount   = countSubdirectories(behavioralDesignPatternDir);
 
         Path readmePath = Paths.get("README.md");
         String content  = new String(Files.readAllBytes(readmePath), StandardCharsets.UTF_8);
@@ -72,7 +75,8 @@ public class FileCounter {
                 "## 📂 **Low Level Design**\n\n" +
                         "| **Topics** | **Count** | **Details** |\n" +
                         "|----------------|-----------|-----------|\n" +
-                        "| ✅ **Design Patterns**    | **" + (lldCreationalCount + lldStructuralCount + lldCBehavioralCount) + "** |" + "creational : " + lldCreationalCount + ", structural : " + lldStructuralCount + ", behavioral : " + lldCBehavioralCount + "|\n";
+                        "| ✅ **Design Patterns**    | **" + (creationalDPCount + structuralDPCount + behavioralDPCount) + "** |" + "creational : " + creationalDPCount + ", structural : " + structuralDPCount + ", behavioral : " + behavioralDPCount + "|\n"+
+                        "| ✅ **Low Level Designs**    | **" + lldCount + "** | |\n";
 
 
         if (content.contains(lldStart) && content.contains(lldEnd)) {
