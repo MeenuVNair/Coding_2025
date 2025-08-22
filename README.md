@@ -49,13 +49,28 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 <!-- PROGRAM_COUNTS_END -->
 
 ---
+<!-- DS_COUNTS_START -->
+## 📂 **Data Structures**
+
+| **Topic** | **Count** |
+|----------------|-----------|
+| ⚡ **Linked List**    | **1** |
+| ⚡ **Tree**  | **4** |
+| ⚡ **Graph**    | **1** |
+| ⚡ **Trie**    | **2** |
+| ⚡ **Disjoint Sets**    | **1** |
+| ⚡ **Sorting Algorithms**    | **3** |
+
+<!-- DS_COUNTS_END -->
+
+---
 <!-- LLD_START -->
 ## 📂 **Low Level Design**
 
 | **Topics** | **Count** | **Details** |
 |----------------|-----------|-----------|
-| ✅ **Design Patterns**    | **6** |creational : 5, structural : 1, behavioral : 0|
-| ✅ **Low Level Designs**    | **1** | |
+| ✅ **Design Patterns**    | **12** |creational : 5, structural : 5, behavioral : 2|
+| ✅ **Low Level Designs**    | **1** |  |
 
 <!-- LLD_END -->
 

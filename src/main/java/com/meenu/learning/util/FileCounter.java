@@ -22,19 +22,31 @@ public class FileCounter {
         Path easyDir   = Paths.get("src/main/java/com/meenu/learning/problems/easy");
         Path mediumDir = Paths.get("src/main/java/com/meenu/learning/problems/medium");
         Path hardDir   = Paths.get("src/main/java/com/meenu/learning/problems/hard");
-        Path creationalDesignPatternDir   = Paths.get("src/main/java/com/meenu/learning/designpatterns/creational");
-        Path structuralDesignPatternDir   = Paths.get("src/main/java/com/meenu/learning/designpatterns/structural");
-        Path behavioralDesignPatternDir   = Paths.get("src/main/java/com/meenu/learning/designpatterns/behavioral");
-        Path LLDDir   = Paths.get("src/main/java/com/meenu/learning/lld");
-
         int easyCount   = countJavaFiles(easyDir);
         int mediumCount = countJavaFiles(mediumDir);
         int hardCount   = countJavaFiles(hardDir);
 
+        Path creationalDesignPatternDir   = Paths.get("src/main/java/com/meenu/learning/designpatterns/creational");
+        Path structuralDesignPatternDir   = Paths.get("src/main/java/com/meenu/learning/designpatterns/structural");
+        Path behavioralDesignPatternDir   = Paths.get("src/main/java/com/meenu/learning/designpatterns/behavioral");
         int creationalDPCount   = countSubdirectories(creationalDesignPatternDir);
         int structuralDPCount   = countSubdirectories(structuralDesignPatternDir);
         int behavioralDPCount   = countSubdirectories(behavioralDesignPatternDir);
 
+        Path duDir   = Paths.get("src/main/java/com/meenu/learning/datastructures/disjointSet");
+        Path graphDir   = Paths.get("src/main/java/com/meenu/learning/datastructures/graph");
+        Path linkedListDir   = Paths.get("src/main/java/com/meenu/learning/datastructures/linkedlist");
+        Path sortingDir   = Paths.get("src/main/java/com/meenu/learning/datastructures/sorting");
+        Path treeDir   = Paths.get("src/main/java/com/meenu/learning/datastructures/tree");
+        Path trieDir   = Paths.get("src/main/java/com/meenu/learning/datastructures/trie");
+        int duCount = countJavaFiles(duDir);
+        int graphCount = countJavaFiles(graphDir);
+        int linkedListCount = countJavaFiles(linkedListDir);
+        int sortingCount = countJavaFiles(sortingDir);
+        int treeCount = countJavaFiles(treeDir);
+        int trieCount = countJavaFiles(trieDir);
+
+        Path LLDDir   = Paths.get("src/main/java/com/meenu/learning/lld");
         int lldCount   = countSubdirectories(LLDDir);
 
         Path readmePath = Paths.get("README.md");
@@ -65,6 +77,33 @@ public class FileCounter {
         }
 
         // ==============================
+        // Data structure Counts Table
+        // ==============================
+
+        String newDSTable =
+                "## 📂 **Data Structures**\n\n" +
+                        "| **Topic** | **Count** |\n" +
+                        "|----------------|-----------|\n" +
+                        "| ⚡ **Linked List**    | **" + linkedListCount + "** |\n" +
+                        "| ⚡ **Tree**  | **" + treeCount + "** |\n" +
+                        "| ⚡ **Graph**    | **" + graphCount + "** |\n" +
+                        "| ⚡ **Trie**    | **" + trieCount + "** |\n" +
+                        "| ⚡ **Disjoint Sets**    | **" + duCount + "** |\n" +
+                        "| ⚡ **Sorting Algorithms**    | **" + sortingCount + "** |\n";
+
+        String dsStartMarker = "<!-- DS_COUNTS_START -->";
+        String dsEndMarker   = "<!-- DS_COUNTS_END -->";
+
+        if (content.contains(dsStartMarker) && content.contains(dsEndMarker)) {
+            String regex = "(?s)" + Pattern.quote(dsStartMarker) + ".*?" + Pattern.quote(dsEndMarker);
+            String replacement = dsStartMarker + "\n" + newDSTable + "\n" + dsEndMarker;
+            content = content.replaceAll(regex, replacement);
+        } else {
+            content += "\n\n" + dsStartMarker + "\n" + newDSTable + "\n" + dsEndMarker + "\n";
+        }
+
+
+        // ==============================
         // LLD Topics
         // ==============================
 
@@ -76,7 +115,7 @@ public class FileCounter {
                         "| **Topics** | **Count** | **Details** |\n" +
                         "|----------------|-----------|-----------|\n" +
                         "| ✅ **Design Patterns**    | **" + (creationalDPCount + structuralDPCount + behavioralDPCount) + "** |" + "creational : " + creationalDPCount + ", structural : " + structuralDPCount + ", behavioral : " + behavioralDPCount + "|\n"+
-                        "| ✅ **Low Level Designs**    | **" + lldCount + "** | |\n";
+                        "| ✅ **Low Level Designs**    | **" + lldCount + "** |  |\n";
 
 
         if (content.contains(lldStart) && content.contains(lldEnd)) {
