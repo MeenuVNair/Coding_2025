@@ -68,21 +68,26 @@ public class MedianWithTwoHeaps {
         else if(largeNumbers.size() > smallNumbers.size())
             return largeNumbers.peek();
         else
-            return (smallNumbers.peek() + largeNumbers.peek()) / 2; // Even # of elements, return avg of two middle nums
+            return (double) (smallNumbers.peek() + largeNumbers.peek()) / 2; // Even # of elements, return avg of two middle nums
     }
 
     public static void main(String[] args) {
         MedianWithTwoHeaps obj = new MedianWithTwoHeaps();
-        obj.insert(4);
-        System.out.println("Median : " + obj.getMedian());
-        obj.insert(7);
-        System.out.println("Median : " + obj.getMedian());
-        obj.insert(3);
-        System.out.println("Median : " + obj.getMedian());
-        obj.insert(5);
-        System.out.println("Median : " + obj.getMedian());
         obj.insert(1);
-        System.out.println("Median : " + obj.getMedian());
+        obj.insert(2);
+        System.out.println("Median : " + obj.getMedian()); // 1.5
+        obj.insert(3);
+        System.out.println("Median : " + obj.getMedian()); // 2.0
+        /*obj.insert(4);
+        System.out.println("Median : " + obj.getMedian()); // 4.0
+        obj.insert(7);
+        System.out.println("Median : " + obj.getMedian()); // 5.5
+        obj.insert(3);
+        System.out.println("Median : " + obj.getMedian()); // 4.0
+        obj.insert(5);
+        System.out.println("Median : " + obj.getMedian()); // 4.5
+        obj.insert(1);
+        System.out.println("Median : " + obj.getMedian()); // 4.0*/
     }
 }
 
