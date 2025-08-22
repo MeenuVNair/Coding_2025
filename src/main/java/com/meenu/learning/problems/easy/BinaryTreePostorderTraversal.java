@@ -3,6 +3,7 @@ package com.meenu.learning.problems.easy;
 import com.meenu.learning.util.TreeNode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
@@ -79,6 +80,36 @@ public class BinaryTreePostorderTraversal {
         return result;
     }
 }
+
+/**** COMPLEXITY ANALYSIS ********************
+ Time Complexity:O(n) - Visits each node once, plus O(n) for reversing the result list.
+ Space Complexity:O(n) - Stack can contain all nodes in a skewed tree, and result list stores n nodes.
+ */
+
+/************* ITERATIVE WITH 1 STACK ********************/
+
+/*public class BinaryTreePostorderTraversal {
+
+    List<Integer> result = new ArrayList<>();
+
+    public List<Integer> postorderTraversal(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+
+        if(root != null)
+            stack.push(root); // push the root initially
+
+        while(!stack.isEmpty()) {
+            TreeNode currNode = stack.pop(); // get the top node
+            result.add(currNode.val); // add it to the list
+            if(currNode.left != null)
+                stack.push(currNode.left);
+            if(currNode.right != null)
+                stack.push(currNode.right);
+        }
+        Collections.reverse(result); // Reverse the list to get the postorder traversal
+        return result;
+    }
+}*/
 
 
 /*******  PROBLEM DESCRIPTION ******************** 
