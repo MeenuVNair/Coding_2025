@@ -1,4 +1,4 @@
-package com.meenu.learning.problems.medium;
+package com.meenu.learning.problems.easy;
 
 
 /**
@@ -19,37 +19,30 @@ import java.util.Stack;
  Space Complexity : O(n)
  */
 
-public class DFSIterator_InOrder {
+public class DFSIterator_PreOrder {
     TreeNode root;
-    public DFSIterator_InOrder() {
+    public DFSIterator_PreOrder() {
         root = new TreeNode();
     }
 
-    public void DFSIterative(TreeNode root) {
+    public void DFS_PreOrder(TreeNode node) {
         Stack<TreeNode> callStack = new Stack<>();
         TreeNode currNode = root;
 
         while(currNode != null || !callStack.isEmpty()) {
             if(currNode != null) {
-                callStack.push(currNode);
+                System.out.print(currNode.val + " -> ");
+                if(currNode.right != null)
+                    callStack.push(currNode.right);
                 currNode = currNode.left;
             } else {
-                currNode = callStack.pop();
-                System.out.print(currNode.val + " -> ");
-                currNode = currNode.right;
+                callStack.pop();
             }
         }
         System.out.println("null");
     }
-
-    public static void main(String[] args) {
-        DFSIterator_InOrder obj = new DFSIterator_InOrder();
-        TreeNode node = new TreeNode();
-        node.val = 1;
-        obj.DFSIterative(node);
-    }
 }
 
 /*******  PROBLEM DESCRIPTION ******************** 
-Traverse Binary Search Tree using DFS iteratively - Inorder
+ Traverse Binary Search Tree using DFS iteratively - preorder
  */

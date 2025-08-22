@@ -1,4 +1,4 @@
-package com.meenu.learning.problems.medium;
+package com.meenu.learning.problems.easy;
 
 
 /**
