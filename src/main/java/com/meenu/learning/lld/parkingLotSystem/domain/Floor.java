@@ -1,13 +1,11 @@
 package com.meenu.learning.lld.parkingLotSystem.domain;
 
 
-import java.util.UUID;
-
 /**
  * @author Meenu V. Nair
  * @created 21/08/25
  */
 
-public class ParkingSlot {
-    private UUID id;
+public class Floor {
+
 }
