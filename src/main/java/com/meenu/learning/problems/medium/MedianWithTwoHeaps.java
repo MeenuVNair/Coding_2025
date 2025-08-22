@@ -74,10 +74,15 @@ public class MedianWithTwoHeaps {
     public static void main(String[] args) {
         MedianWithTwoHeaps obj = new MedianWithTwoHeaps();
         obj.insert(1);
+        obj.insert(4);
+        obj.insert(2);
+        obj.insert(3);
+        System.out.println("Median : " + obj.getMedian());
+        /*obj.insert(1);
         obj.insert(2);
         System.out.println("Median : " + obj.getMedian()); // 1.5
         obj.insert(3);
-        System.out.println("Median : " + obj.getMedian()); // 2.0
+        System.out.println("Median : " + obj.getMedian()); // 2.0*/
         /*obj.insert(4);
         System.out.println("Median : " + obj.getMedian()); // 4.0
         obj.insert(7);
