@@ -12,7 +12,15 @@ import java.util.Stack;
  * @created 31/07/25
  */
 
-// ****** RECURSSION *********** //
+/**** COMPLEXITY ANALYSIS ********************
+ Time complexity: O(n)
+ Space complexity: O(h)
+
+ n is the number of nodes in the binary tree
+ h is the height of the binary tree
+ */
+
+// ****** RECURSION *********** //
 
 /*
 public class BinaryTreeInorderTraversal {
@@ -32,6 +40,14 @@ public class BinaryTreeInorderTraversal {
 }
 
 */
+
+/**** COMPLEXITY ANALYSIS ********************
+ Time complexity: O(n)
+ Space complexity: O(h)
+
+ n is the number of nodes in the binary tree
+ h is the height of the binary tree
+ */
 
 // ****** ITERATIVE *********** //
 
