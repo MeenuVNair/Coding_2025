@@ -1,5 +1,7 @@
 package com.meenu.learning.problems.medium;
 
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Meenu V. Nair
@@ -9,9 +11,6 @@ package com.meenu.learning.problems.medium;
 /*******  APPROACH ******************** 
 
  */
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**** COMPLEXITY ANALYSIS ********************
  Time Complexity : O(2 ^ t/m)
