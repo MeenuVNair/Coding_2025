@@ -8,7 +8,7 @@ package com.meenu.learning.problems.medium;
 
 /*******  APPROACH ******************** 
  Done this on O(n)
- But the problem asks for O(log n)
+ But the problem asks for O(log n) --> Binary search
  */
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ import java.util.Map;
  */
 
 
-public class FindFirstAndLastPositionOfElementInSortedArray {
+/*public class FindFirstAndLastPositionOfElementInSortedArray {
     public int[] searchRange(int[] nums, int target) {
         Map<Integer, List<Integer>> indicesMap = new HashMap<>();
         for(int i = 0; i < nums.length; i++) {
@@ -52,6 +52,62 @@ public class FindFirstAndLastPositionOfElementInSortedArray {
         FindFirstAndLastPositionOfElementInSortedArray obj = new FindFirstAndLastPositionOfElementInSortedArray();
         int[] input = new int[] {5,7,7,8,8,10};
         obj.searchRange(input, 8);
+    }
+}*/
+
+
+/**** COMPLEXITY ANALYSIS ********************
+ Time Complexity : O(log n)
+ Space Complexity : O(log n)
+ */
+
+/*********** BINARY SEARCH *******************/
+
+
+public class FindFirstAndLastPositionOfElementInSortedArray {
+    public int[] searchRange(int[] nums, int target) {
+        int firstIndex = findFirst(nums, target);
+        int lastIndex = findLast(nums, target);
+        return new int[] {firstIndex, lastIndex};
+    }
+
+    private int findFirst(int[] nums, int target) {
+        int index = -1;
+        int l = 0;
+        int r = nums.length - 1;
+        while(l <= r) {
+            int mid = l + (r - l) / 2;
+            if(nums[mid] >= target)
+                r = mid - 1;
+            else
+                l = mid + 1;
+            if(nums[mid] == target)
+                index = mid;
+        }
+        return index;
+    }
+
+    private int findLast(int[] nums, int target) {
+        int index = -1;
+        int l = 0;
+        int r = nums.length - 1;
+        while(l <= r) {
+            int mid = l + (r - l) / 2;
+            if(nums[mid] <= target)
+                l = mid + 1;
+            else
+                r = mid - 1;
+            if(nums[mid] == target)
+                index = mid;
+        }
+        return index;
+    }
+
+    public static void main(String[] args) {
+        FindFirstAndLastPositionOfElementInSortedArray obj = new FindFirstAndLastPositionOfElementInSortedArray();
+        int[] input = new int[] {5,7,7,8,8,10};
+        int[] output = obj.searchRange(input, 8);
+        System.out.println("[" + output[0] + "," + output[1] + "]");
     }
 }
 
