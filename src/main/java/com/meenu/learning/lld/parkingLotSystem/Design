@@ -1,0 +1,127 @@
+
+Core Entities
+=================
+Vehicle
+--------
+UUID id
+String licensePlate
+VehicleType vehicleType
+
+ParkingSlot
+-------------
+UUID id
+int floorNumber
+boolean isOccupied
+Vehicle.VehicleType slotType
+
+
+Floor
+--------
+UUID id
+int floorNumber
+List<ParkingSlot> slots
+
+
+Ticket
+----------
+UUID id
+UUID vehicleId
+UUID slotId
+LocalDateTime entryTime
+boolean isValid
+
+Receipt
+---------
+UUID id
+UUID tickerId
+double totalAmount
+LocalDateTime exitTime
+PaymentStatus status
+
+Payment
+-----------
+UUID id
+UUID ticketId
+double amount
+PaymentStatus status
+PaymentGateway paymentGateway
+
+PricingRule
+--------------
+Vehicle.VehicleType vehicleType
+int ratePerHour
+int flatRate
+String ruleType
+
+
+Interaction Flows
+======================
+Entry Flow
+--------------
+-> Vehicle arrives
+-> Slot allocated
+-> Ticket generated
+-> Slot marked as occupied
+
+Exit Flow
+------------
+-> Ticket scanned
+-> Fee calculated
+-> Payment processed (with retries)
+-> Receipt generated
+-> Slot released
+-> Ticket deactivated
+
+Admin Flow
+----------------
+-> Add floor
+-> Add slot
+-> Update pricing
+
+
+Class Structures & Relationships
+=======================================
+
+Controllers
+--------------
+EntryController.enterVehicle()
+ExitController.exitVehicle()
+AdminController.addFloor(), addSlot(), updatePricing()
+
+Services
+-------------
+TicketService - Generates and retrieves tickets
+SlotService - Allocates and releases parking slots
+PricingService - Calculates fees based on parking duration and type
+PaymentService - Processes payments for parking tickets
+ReceiptService - Generates receipts after payment
+AdminService - Handles administrative tasks like adding floors, updating pricing, and slot management
+
+Repositories
+---------------
+TicketRepository, SlotRepository, FloorRepository, PricingRuleRepository, PaymentRepository
+-> CRUD operations
+-> methods to query and persist data
+
+Interfaces and Adapters
+-------------------------
+interface -> PaymentGatewayAdapter
+implementation -> RazorpayAdapter
+               -> StripeAdapter
+
+Implementation
+====================
+
+Entry Use Case
+enterVehicle() → SlotService.allocateSlot() → TicketService.generateTicket() → TicketRepository.save() → Return EntryResult
+
+Exit Use Case:
+exitVehicle() → Get Ticket → Calculate Fee → Process Payment (with retries) → Release Slot → Generate Receipt → Return ExitResult
+
+Admin Use Cases:
+addFloor() : Save new floor
+addSlot() : Save new slot
+updatePricing() : Update pricing rules
+
+
+

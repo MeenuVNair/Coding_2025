@@ -1,38 +1,47 @@
 package com.meenu.learning.lld.parkingLotSystem.domain;
 
 
+import com.meenu.learning.lld.parkingLotSystem.adapter.PaymentGatewayAdapter;
+
 import java.util.UUID;
 
 /**
- * @author Meenu V. Nair
- * @created 21/08/25
- */
+* @author Meenu V. Nair
+* @created 25/08/25
+*/
 
 public class Payment {
-    private UUID id;
+    private UUID paymentId;
     private UUID ticketId;
     private double amount;
-    private PaymentGateway paymentGateway;
+    private PaymentGatewayAdapter paymentGateway;
     private PaymentStatus paymentStatus;
 
-    public enum PaymentGateway {
-        RAZORPAY, STRIPE;
-    }
-
     public enum PaymentStatus {
-        SUCCESS, FAILED, PENDING
+        PENDING, SUCCESS, FAILED
     }
 
-    public Payment(UUID ticketId, double amount, PaymentGateway paymentGateway) {
-        id = UUID.randomUUID();
+
+    public Payment(UUID ticketId, double amount, PaymentGatewayAdapter paymentGateway) {
+        this.paymentId = UUID.randomUUID();
         this.ticketId = ticketId;
         this.amount = amount;
         this.paymentGateway = paymentGateway;
         this.paymentStatus = PaymentStatus.PENDING;
     }
 
-    public UUID getId() {
-        return id;
+    public void markAsSuccessful() {
+        this.paymentStatus = Payment.PaymentStatus.SUCCESS;
+    }
+
+    public void markAsFailed() {
+        this.paymentStatus = Payment.PaymentStatus.FAILED;
+    }
+
+    //getters
+
+    public UUID getPaymentId() {
+        return paymentId;
     }
 
     public UUID getTicketId() {
@@ -43,11 +52,22 @@ public class Payment {
         return amount;
     }
 
-    public PaymentGateway getPaymentGateway() {
+    public PaymentGatewayAdapter getPaymentGateway() {
         return paymentGateway;
     }
 
     public PaymentStatus getPaymentStatus() {
         return paymentStatus;
+    }
+
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "paymentId=" + paymentId +
+                ", ticketId=" + ticketId +
+                ", amount=" + amount +
+                ", paymentGateway=" + paymentGateway +
+                ", paymentStatus=" + paymentStatus +
+                '}';
     }
 }
