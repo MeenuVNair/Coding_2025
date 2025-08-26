@@ -14,8 +14,8 @@ import java.util.*;
 
 
 /**** COMPLEXITY ANALYSIS ********************
- Time Complexity : O(E logE)
- Space Complexity : O(E + V)
+ Time Complexity:O(E log V), where E is the number of edges (times.length) and V is the number of vertices (n).
+ Space Complexity:O(V + E), where V is the number of vertices (n) and E is the number of edges (times.length).
  */
 
 public class NetworkDelayTime {
