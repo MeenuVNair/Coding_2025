@@ -39,12 +39,14 @@ public class FileCounter {
         Path sortingDir   = Paths.get("src/main/java/com/meenu/learning/datastructures/sorting");
         Path treeDir   = Paths.get("src/main/java/com/meenu/learning/datastructures/tree");
         Path trieDir   = Paths.get("src/main/java/com/meenu/learning/datastructures/trie");
+        Path algoDir   = Paths.get("src/main/java/com/meenu/learning/algorithms");
         int duCount = countJavaFiles(duDir);
         int graphCount = countJavaFiles(graphDir);
         int linkedListCount = countJavaFiles(linkedListDir);
         int sortingCount = countJavaFiles(sortingDir);
         int treeCount = countJavaFiles(treeDir);
         int trieCount = countJavaFiles(trieDir);
+        int algoCount = countJavaFiles(algoDir);
 
         Path LLDDir   = Paths.get("src/main/java/com/meenu/learning/lld");
         int lldCount   = countSubdirectories(LLDDir);
@@ -89,6 +91,7 @@ public class FileCounter {
                         "| ⚡ **Graph**    | **" + graphCount + "** |\n" +
                         "| ⚡ **Trie**    | **" + trieCount + "** |\n" +
                         "| ⚡ **Disjoint Sets**    | **" + duCount + "** |\n" +
+                        "| ⚡ **Algorithms**    | **" + algoCount + "** |\n" +
                         "| ⚡ **Sorting Algorithms**    | **" + sortingCount + "** |\n";
 
         String dsStartMarker = "<!-- DS_COUNTS_START -->";
