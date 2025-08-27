@@ -49,5 +49,5 @@ public class Kruskal {
 }
 
 /*******  PROBLEM DESCRIPTION ******************** 
- Given an list of edges of a connected undirected graph, with nodes numbered from 1 to n, return a list edges making up the minimum spanning tree.
+ Given a list of edges of a connected undirected graph, with nodes numbered from 1 to n, return a list edges making up the minimum spanning tree.
  */
