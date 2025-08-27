@@ -43,8 +43,8 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 |----------------|-----------|
 | 🟢 **Easy**    | **75** |
 | 🟡 **Medium**  | **77** |
-| 🔴 **Hard**    | **17** |
-| 📊 **Total**   | **169** |
+| 🔴 **Hard**    | **18** |
+| 📊 **Total**   | **170** |
 
 <!-- PROGRAM_COUNTS_END -->
 
