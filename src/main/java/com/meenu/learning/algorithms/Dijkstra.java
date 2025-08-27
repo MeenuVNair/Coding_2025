@@ -1,5 +1,6 @@
 package com.meenu.learning.algorithms;
 
+import java.util.*;
 
 /**
  * @author Meenu V. Nair
@@ -22,7 +23,6 @@ package com.meenu.learning.algorithms;
 
  */
 
-import java.util.*;
 
 /**** COMPLEXITY ANALYSIS ********************
  Time Complexity : O(E logE)
