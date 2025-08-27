@@ -35,6 +35,7 @@ public class Prim {
         for(int[] edge : edges) {
             int n1 = edge[0], n2 = edge[1], w = edge[2];
             adj.get(n1).add(new Integer[] {n2, w});
+            adj.get(n2).add(new Integer[] {n1, w});
         }
 
         PriorityQueue<int[]> minHeap = new PriorityQueue<>((n1, n2) -> n1[0] - n2[0]);
