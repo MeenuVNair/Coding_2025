@@ -28,16 +28,16 @@ import java.util.*;
         return false;
     }
     private boolean dfs(int current, int prev, List<Integer>[] adj, Set<Integer> visited) {
-        visited.add(current);
-        for(Integer next : adj[current]) {
-            if(!visited.contains(next)) {
-                if(dfs(next, current, adj, visited))
+        visited.add(current); // Mark the node as visited
+        for(Integer next : adj[current]) { // Traverse all the neighbors
+            if(!visited.contains(next)) { // If not visited
+                if(dfs(next, current, adj, visited)) // Recursively perform DFS, and return true if cycle is found
                     return true;
-            } else if(next != prev) {
+            } else if(next != prev) { // Else if it is visited with some different parent a cycle is detected
                 return true;
             }
         }
-        return false;
+        return false; // Return false if no cycle is detected
     }
 
     public static void main(String[] args) {
@@ -87,24 +87,24 @@ public class DetectACycleInAnUndirectedGraph {
     }
     private boolean bfs(int i, List<Integer>[] adj, Set<Integer> visited) {
         Queue<int[]> q = new LinkedList<>();
-        q.add(new int[] {i, -1});
-        visited.add(i);
+        q.add(new int[] {i, -1}); // Mark the node and parent to queue
+        visited.add(i); // Mark the node as visited
 
         while(!q.isEmpty()) {
-            int[] current = q.poll();
+            int[] current = q.poll(); // pop value and assign node and parent values
             int node = current[0];
             int parent = current[1];
 
-            for(Integer next : adj[node]) {
-                if(!visited.contains(next)) {
+            for(Integer next : adj[node]) { // Traverse all the neighbors
+                if(!visited.contains(next)) { // If not visited
                     q.add(new int[] {next, node});
                     visited.add(next);
-                } else if(next != parent) {
+                } else if(next != parent) { // Else if it is visited with some different parent a cycle is detected
                     return true;
                 }
             }
         }
-        return false;
+        return false; // Return false if no cycle is detected
     }
 
     public static void main(String[] args) {
