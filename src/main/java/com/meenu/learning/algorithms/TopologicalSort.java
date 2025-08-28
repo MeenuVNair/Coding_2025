@@ -19,8 +19,8 @@ package com.meenu.learning.algorithms;
 import java.util.*;
 
 /**** COMPLEXITY ANALYSIS ********************
- Time Complexity : 
- Space Complexity : 
+ Time Complexity : O(V + E)
+ Space Complexity : O(V + E)
  */
 
 public class TopologicalSort {
