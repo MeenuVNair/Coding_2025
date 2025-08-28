@@ -8,7 +8,7 @@ package com.meenu.learning.problems.medium;
 
 import java.util.*;
 
-/*******  APPROACH ********************
+/*******  APPROACH 1 ********************
 DFS
  */
 
@@ -17,7 +17,7 @@ DFS
  Space complexity: O(V+E)
  */
 
-public class CourseSchedule {
+/*public class CourseSchedule {
     private Map<Integer, List<Integer>> preMap = new HashMap<>();
     private Set<Integer> visitSet = new HashSet<>();
     public boolean canFinish(int numCourses, int[][] prerequisites) {
@@ -50,6 +50,56 @@ public class CourseSchedule {
         visitSet.remove(course);
         preMap.put(course, new ArrayList<>());
         return true;
+    }
+}*/
+
+/*******  APPROACH 2 ********************
+ Topological Sort
+ */
+
+/**
+ Time complexity: O(V+E)
+ Space complexity: O(V+E)
+ */
+
+public class CourseSchedule {
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        Map<Integer, List<Integer>> adj = new HashMap<>();
+        for(int i = 0; i < numCourses; i++) {
+            adj.put(i, new ArrayList<>());
+        }
+        for(int[] preReq : prerequisites) {
+            adj.get(preReq[1]).add(preReq[0]);
+        }
+
+        Set<Integer> visited = new HashSet<>();
+        Set<Integer> currentPath = new HashSet<>();
+        for(int i = 0; i < numCourses; i++) {
+            if(!dfs(i, adj, visited, currentPath)) return false;
+        }
+        return true;
+    }
+    private boolean dfs(int source, Map<Integer, List<Integer>> adj, Set<Integer> visited, Set<Integer> currentPath) {
+        if(currentPath.contains(source))
+            return false;
+        if(visited.contains(source))
+            return true;
+        currentPath.add(source);
+        for(Integer preReq : adj.get(source)) {
+            if(!dfs(preReq, adj, visited, currentPath)) return false;
+        }
+        currentPath.remove(source);
+        visited.add(source);
+        return true;
+    }
+
+    public static void main(String[] args) {
+        CourseSchedule obj = new CourseSchedule();
+        int numCourse = 2;
+        int[][] prerequisites = new int[][] {{0, 1}}; // true
+        //int[][] prerequisites = new int[][] {{1, 0}}; // true
+        //int[][] prerequisites = new int[][] {{1, 0}, {0, 1}}; // false
+        System.out.println(obj.canFinish(numCourse, prerequisites));
     }
 }
 
