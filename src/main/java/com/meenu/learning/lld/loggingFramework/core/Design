@@ -1,0 +1,34 @@
+
+REQUIREMENTS
+===============
+
+Initial Requirements (Core Expectations)
+---------------------------------------------------
+1. The system should allow logging messages with different levels:
+    INFO, DEBUG, WARN, ERROR, FATAL
+2. Log messages should contain:
+   - A timestamp
+   - A log level
+   - A message string
+   - (Optional later) Thread ID, class name, request ID
+3. The framework should support multiple log destinations:
+   - Console (stdout)
+   - File (rotating logs)
+   - External systems (e.g., DB, monitoring tool)
+4. The logging framework should allow configurable log levels
+   - Example: In production → only WARN and ERROR are logged
+   - In dev → DEBUG and INFO should also appear
+
+Advanced Requirements (Scaling It Up)
+---------------------------------------------------
+5. Thread-safety → multiple threads writing logs concurrently should not cause corrupted logs.
+6. Asynchronous logging → logs should not block the main business flow (use queue/buffer).
+7. Log formatting → configurable formats, e.g.:
+    [2025-08-25 11:32:12][ERROR][Thread-1] - Payment failed for user 123
+8. Log rotation & retention policy → file logs should roll over after a size/time limit, and old logs should be archived or deleted.
+9. Filtering → ability to log only certain modules/packages (e.g., only DB logs, exclude network logs).
+10. Extensibility → easily plug in a new destination (e.g., Kafka, ElasticSearch) without changing core logic.
+
+
+======================================================================================================================================================
+
