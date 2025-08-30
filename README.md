@@ -59,7 +59,7 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 | ⚡ **Graph**    | **1** |
 | ⚡ **Trie**    | **2** |
 | ⚡ **Disjoint Sets**    | **1** |
-| ⚡ **Algorithms**    | **5** |
+| ⚡ **Algorithms**    | **6** |
 | ⚡ **Sorting Algorithms**    | **3** |
 
 <!-- DS_COUNTS_END -->
