@@ -71,7 +71,7 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 | **Topics** | **Count** | **Details** |
 |----------------|-----------|-----------|
 | ✅ **Design Patterns**    | **6** |creational : 5, structural : 1, behavioral : 0|
-| ✅ **Low Level Designs**    | **1** |  |
+| ✅ **Low Level Designs**    | **2** |  |
 
 <!-- LLD_END -->
 
