@@ -14,6 +14,8 @@ import java.util.List;
 /**** COMPLEXITY ANALYSIS ********************
  Time Complexity : O(2^n)
  Space Complexity : O(n)
+
+ Where n is the number of items
  */
 
 public class ZeroOneKnapsack_Bruteforce {
