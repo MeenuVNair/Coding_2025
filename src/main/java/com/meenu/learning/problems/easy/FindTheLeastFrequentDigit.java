@@ -1,5 +1,7 @@
 package com.meenu.learning.problems.easy;
 
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * @author Meenu V. Nair
@@ -9,9 +11,6 @@ package com.meenu.learning.problems.easy;
 /*******  APPROACH ******************** 
 
  */
-
-import java.util.Map;
-import java.util.TreeMap;
 
 /**** COMPLEXITY ANALYSIS ********************
  Time Complexity : 
