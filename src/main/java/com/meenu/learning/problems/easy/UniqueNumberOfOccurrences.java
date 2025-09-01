@@ -1,0 +1,64 @@
+package com.meenu.learning.problems.easy;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+/**
+ * @author Meenu V. Nair
+ * @created 01/09/25
+ */
+
+/*******  APPROACH ******************** 
+ Find the number of occurrences of each element in the array using a hash map.
+ Iterate through the hash map and check if there is a repeated value.
+ */
+
+/**** COMPLEXITY ANALYSIS ********************
+ Time Complexity : O(N)
+ Space Complexity : O(N)
+ where N is the number of elements in arr
+ */
+
+public class UniqueNumberOfOccurrences {
+    public boolean uniqueOccurrences(int[] arr) {
+        Map<Integer, Integer> freqMap = new HashMap<>();
+        for(int num : arr) {
+            freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
+        }
+        Set<Integer> duplicateOccurences = new HashSet<>();
+        for(Map.Entry<Integer, Integer> entry : freqMap.entrySet()) {
+            if(duplicateOccurences.contains(entry.getValue()))
+                return false;
+            duplicateOccurences.add(entry.getValue());
+        }
+        return true;
+    }
+}
+
+/*******  PROBLEM DESCRIPTION ******************** 
+ Given an array of integers arr, return true if the number of occurrences of each value in the array is unique or false otherwise.
+
+
+
+ Example 1:
+
+ Input: arr = [1,2,2,1,1,3]
+ Output: true
+ Explanation: The value 1 has 3 occurrences, 2 has 2 and 3 has 1. No two values have the same number of occurrences.
+ Example 2:
+
+ Input: arr = [1,2]
+ Output: false
+ Example 3:
+
+ Input: arr = [-3,0,1,-3,1,1,1,-3,10,0]
+ Output: true
+
+
+ Constraints:
+
+ 1 <= arr.length <= 1000
+ -1000 <= arr[i] <= 1000
+ */
