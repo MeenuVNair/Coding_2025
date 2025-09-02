@@ -30,11 +30,11 @@ public class CoinChange {
     }
 
     private int dfs(int i, int[] coins, int amount, int[][] cache) {
-        if(amount == 0) // got the combination, can return now
+        if (amount == 0) // got the combination, can return now
             return 0;
-        if(i == coins.length) // if reached end but still amount > 0, then we cannot make the combination
+        if (i == coins.length) // if reached end but still amount > 0, then we cannot make the combination
             return Integer.MAX_VALUE;
-        if(cache[i][amount] != -1)
+        if (cache[i][amount] != -1)
             return cache[i][amount];
 
         // skip the item
@@ -42,12 +42,13 @@ public class CoinChange {
 
         // include the item
         int turn = Integer.MAX_VALUE;
-        if(amount - coins[i] >= 0) {
+        if (amount - coins[i] >= 0) {
             int result = dfs(i, coins, amount - coins[i], cache);
-            if(result != Integer.MAX_VALUE)
+            if (result != Integer.MAX_VALUE)
                 turn = 1 + result;
         }
         return cache[i][amount] = Math.min(skip, turn);
+    }
 }
 
 /*******  PROBLEM DESCRIPTION ******************** 
