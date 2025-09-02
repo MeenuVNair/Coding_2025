@@ -18,30 +18,38 @@ import java.util.List;
  */
 
 /**** COMPLEXITY ANALYSIS ********************
- Time Complexity : O(2^n)
- Space Complexity : O(n)
- where n is the number of items
+ Time Complexity : O(n * m)
+ Space Complexity : O(n * m)
+ where n is the number of items & m is the capacity
  */
 
-public class UnboundedKnapsack_Bruteforce {
+public class UnboundedKnapsack_Memoization {
     public int dfs(List<Integer> profit, List<Integer> weight, int capacity) {
-        return dfs(0, profit, weight, capacity);
+        int[][] cache = new int[profit.size()][capacity + 1];
+        for(int i = 0; i < profit.size(); i++) {
+            for(int j = 0; j <= capacity; j++) {
+                cache[i][j] = Integer.MIN_VALUE;
+            }
+        }
+        return dfs(0, profit, weight, capacity, cache);
     }
 
-    private int dfs(int i, List<Integer> profit, List<Integer> weight, int capacity) {
+    private int dfs(int i, List<Integer> profit, List<Integer> weight, int capacity, int[][] cache) {
         if(i == profit.size())
             return 0;
+        if(cache[i][capacity] != Integer.MIN_VALUE)
+            return cache[i][capacity];
 
-        //skip the item
-        int maxProfit = dfs(i + 1, profit, weight, capacity);
+        // skip the item
+        cache[i][capacity] = dfs(i + 1, profit, weight, capacity, cache);
 
-        //include the item
+        // include the item
         int newCapacity = capacity - weight.get(i);
         if(newCapacity >= 0) {
-            int newProfit = profit.get(i) + dfs(i, profit, weight, newCapacity);
-            maxProfit = Math.max(newProfit, maxProfit);
+            int newProfit = profit.get(i) + dfs(i, profit, weight, newCapacity, cache);
+            cache[i][capacity] = Math.max(newProfit, cache[i][capacity]);
         }
-        return maxProfit;
+        return cache[i][capacity];
     }
 }
 
