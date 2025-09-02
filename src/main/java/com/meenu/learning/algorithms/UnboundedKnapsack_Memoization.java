@@ -24,7 +24,7 @@ import java.util.List;
  */
 
 public class UnboundedKnapsack_Memoization {
-    public int dfs(List<Integer> profit, List<Integer> weight, int capacity) {
+    public int knapsack(List<Integer> profit, List<Integer> weight, int capacity) {
         int[][] cache = new int[profit.size()][capacity + 1];
         for(int i = 0; i < profit.size(); i++) {
             for(int j = 0; j <= capacity; j++) {

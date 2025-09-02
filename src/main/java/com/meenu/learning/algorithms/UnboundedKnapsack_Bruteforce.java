@@ -24,7 +24,7 @@ import java.util.List;
  */
 
 public class UnboundedKnapsack_Bruteforce {
-    public int dfs(List<Integer> profit, List<Integer> weight, int capacity) {
+    public int knapsack(List<Integer> profit, List<Integer> weight, int capacity) {
         return dfs(0, profit, weight, capacity);
     }
 
