@@ -45,7 +45,7 @@ public class LCS {
  Space Complexity :
  */
 
-public class LCS_DP_TopDown {
+public class LCS {
     public int longestCommonSubsequence(String text1, String text2) {
         int[][] cache = new int[text1.length()][text2.length()];
         for(int i = 0; i < text1.length(); i++) {
@@ -64,8 +64,9 @@ public class LCS_DP_TopDown {
         if(text1.charAt(i) == text2.charAt(j))
             cache[i][j] = 1 + dfs(text1, text2, i + 1, j + 1, cache);
         else {
-            cache[i][j] = Math.max(dfs(text1, text2, i + 1, j), dfs(text1, text2))
+            cache[i][j] = Math.max(dfs(text1, text2, i + 1, j, cache), dfs(text1, text2, i, j + 1, cache));
         }
+        return cache[i][j];
     }
 }
 
