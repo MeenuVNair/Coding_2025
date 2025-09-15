@@ -17,7 +17,7 @@ import java.util.List;
  Space Complexity : O(n)
  */
 
-public class MaximumNumberOfWordsYouCanType {
+/*public class MaximumNumberOfWordsYouCanType {
     public int canBeTypedWords(String text, String brokenLetters) {
         List<String> wordList = Arrays.asList(text.split(" "));
         int count = wordList.size();
@@ -30,6 +30,52 @@ public class MaximumNumberOfWordsYouCanType {
             }
         }
         return count;
+    }
+}*/
+
+/********** OPTIMISED **************/
+
+
+/**
+ The first solution checked each broken letter against each word using word.contains(...), causing repeated scans of words: O(m * n) in effect.
+ The optimized approach builds a constant-time lookup (the boolean[26]) so each character of text is checked once → linear time.
+ */
+
+
+/**** COMPLEXITY ANALYSIS ********************
+ Time Complexity : O(m + n), where n = text.length(), m = brokenLetters.length()
+ Space Complexity : O(1) (only the fixed-size broken array), excluding the input strings
+ */
+
+public class MaximumNumberOfWordsYouCanType {
+    public int canBeTypedWords(String text, String brokenLetters) {
+        boolean[] broken = new boolean[26];
+        for(char c : brokenLetters.toCharArray()) {
+            broken[c - 'a'] = true;
+        }
+
+        int count = 0;
+
+        List<String> words = Arrays.asList(text.split(" "));
+        for(String word : words) {
+            boolean canType = true;
+            for(char c : word.toCharArray()) {
+                if(broken[c - 'a']) {
+                    canType = false;
+                    break;
+                }
+            }
+            if(canType)
+                count++;
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        MaximumNumberOfWordsYouCanType obj = new MaximumNumberOfWordsYouCanType();
+        String text = "hello world";
+        String brokenLetters = "ad";
+        System.out.println(obj.canBeTypedWords(text, brokenLetters)); // 1
     }
 }
 
