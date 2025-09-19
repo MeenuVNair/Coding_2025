@@ -13,8 +13,8 @@ import java.util.Map;
  */
 
 /**** COMPLEXITY ANALYSIS ********************
- Time Complexity : 
- Space Complexity : 
+ Time Complexity : O(1)
+ Space Complexity : O(N)
  */
 
 public class DesignSpreadsheet {
