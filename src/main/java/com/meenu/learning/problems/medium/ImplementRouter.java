@@ -23,7 +23,7 @@ public class ImplementRouter {
     Map<Integer, Integer> st = new HashMap<>();
     int maxSize = 0; // maxSize allowed
 
-    public Router(int memoryLimit) {
+    public ImplementRouter(int memoryLimit) {
         maxSize = memoryLimit;
     }
 
