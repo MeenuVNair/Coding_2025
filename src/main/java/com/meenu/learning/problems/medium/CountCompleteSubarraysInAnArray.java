@@ -15,11 +15,46 @@ import java.util.Set;
  */
 
 /**** COMPLEXITY ANALYSIS ********************
- Time Complexity : 
- Space Complexity : 
+ Time Complexity : O(n^2)
+     Outer loop runs n times, and in the worst case, the inner loop runs up to n times.
+     However, early break after matching all distinct elements optimizes the runtime in practice.
+
+ Space Complexity : O(n)
  */
 
+/*
 public class CountCompleteSubarraysInAnArray {
+    public int countCompleteSubarrays(int[] nums) {
+        Set<Integer> unique = new HashSet<>();
+        for (int num : nums) unique.add(num);
+        int totalDistinct = unique.size(), count = 0, n = nums.length;
+
+        for (int i = 0; i < n; i++) {
+            Set<Integer> seen = new HashSet<>();
+            for (int j = i; j < n; j++) {
+                seen.add(nums[j]);
+                if (seen.size() == totalDistinct) {
+                    count += n - j;
+                    break;
+                }
+            }
+        }
+
+        return count;
+    }
+} */
+
+/************ O(n) solution ****************/
+
+/**** COMPLEXITY ANALYSIS ********************
+ Time Complexity : O(n)
+    since two pointer slide at most n times.
+
+ Space Complexity : O(n)
+    for hashmap counter
+ */
+
+class CountCompleteSubarraysInAnArray {
     public int countCompleteSubarrays(int[] nums) {
         Set<Integer> s = new HashSet<>();
         for (int a : nums)
