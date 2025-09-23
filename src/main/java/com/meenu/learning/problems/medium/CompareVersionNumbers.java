@@ -17,20 +17,20 @@ package com.meenu.learning.problems.medium;
 
 public class CompareVersionNumbers {
     public int compareVersion(String version1, String version2) {
-        String[] v1 = version1.split(".");
-        String[] v2 = version2.split(".");
+        String[] v1 = version1.split("\\.");
+        String[] v2 = version2.split("\\.");
 
         int n = v1.length;
         int m = v2.length;
 
-        int i = 0, j = 0;
-        while(i < n && j < m) {
-            if(Integer.parseInt(v1[i]) < Integer.parseInt(v2[i]))
+        for(int i = 0; i < Math.max(n,m); i++) {
+            int num1 = i < v1.length ? Integer.parseInt(v1[i]) : 0;
+            int num2 = i < v2.length ? Integer.parseInt(v2[i]) : 0;
+
+            if(num1 < num2)
                 return -1;
-            if(Integer.parseInt(v1[i]) > Integer.parseInt(v2[i]))
+            if(num1 > num2)
                 return 1;
-            i++;
-            j++;
         }
         return 0;
     }
