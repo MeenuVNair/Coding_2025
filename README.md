@@ -42,9 +42,9 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 | **Difficulty** | **Count** |
 |----------------|-----------|
 | 🟢 **Easy**    | **89** |
-| 🟡 **Medium**  | **94** |
+| 🟡 **Medium**  | **95** |
 | 🔴 **Hard**    | **23** |
-| 📊 **Total**   | **206** |
+| 📊 **Total**   | **207** |
 
 <!-- PROGRAM_COUNTS_END -->
 
