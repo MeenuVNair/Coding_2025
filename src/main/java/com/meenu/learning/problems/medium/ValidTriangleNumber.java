@@ -1,0 +1,70 @@
+package com.meenu.learning.problems.medium;
+
+import java.util.Arrays;
+
+/**
+ * @author Meenu V. Nair
+ * @created 26/09/25
+ */
+
+/*******  APPROACH ******************** 
+
+ */
+
+/**** COMPLEXITY ANALYSIS ********************
+ Time Complexity : 
+ Space Complexity : 
+ */
+
+public class ValidTriangleNumber {
+    public int triangleNumber(int[] nums) {
+        Arrays.sort(nums); // sort the array first
+        int n = nums.length;
+        int count = 0;
+
+        // fix the largest side nums[i]
+        for (int i = n - 1; i >= 2; i--) {
+            int left = 0;
+            int right = i - 1;
+
+            // use two pointers to find valid pairs
+            while (left < right) {
+                if (nums[left] + nums[right] > nums[i]) {
+                    // all pairs between left and right are valid
+                    count += right - left;
+                    right--;
+                } else {
+                    left++;
+                }
+            }
+        }
+
+        return count;
+    }
+}
+
+/*******  PROBLEM DESCRIPTION ******************** 
+ Given an integer array nums, return the number of triplets chosen from the array that can make triangles if we take them as side lengths of a triangle.
+
+
+
+ Example 1:
+
+ Input: nums = [2,2,3,4]
+ Output: 3
+ Explanation: Valid combinations are:
+ 2,3,4 (using the first 2)
+ 2,3,4 (using the second 2)
+ 2,2,3
+ Example 2:
+
+ Input: nums = [4,2,3,4]
+ Output: 4
+
+
+ Constraints:
+
+ 1 <= nums.length <= 1000
+ 0 <= nums[i] <= 1000
+
+ */
