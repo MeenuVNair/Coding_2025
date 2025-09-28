@@ -41,10 +41,10 @@ If this repo has helped you, please consider giving it a ⭐ on GitHub — it mo
 
 | **Difficulty** | **Count** |
 |----------------|-----------|
-| 🟢 **Easy**    | **90** |
+| 🟢 **Easy**    | **91** |
 | 🟡 **Medium**  | **101** |
 | 🔴 **Hard**    | **23** |
-| 📊 **Total**   | **214** |
+| 📊 **Total**   | **215** |
 
 <!-- PROGRAM_COUNTS_END -->
 
